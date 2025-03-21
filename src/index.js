@@ -20,27 +20,10 @@ const server = new mcp_js_1.McpServer({
     name: "Echo",
     version: "1.0.0"
 });
-server.resource("echo", new mcp_js_1.ResourceTemplate("echo://{message}", { list: undefined }), (uri_1, _a) => __awaiter(void 0, [uri_1, _a], void 0, function* (uri, { message }) {
-    return ({
-        contents: [{
-                uri: uri.href,
-                text: `Resource echo: ${message}`
-            }]
-    });
-}));
 server.tool("echo", { message: zod_1.z.string() }, (_a) => __awaiter(void 0, [_a], void 0, function* ({ message }) {
     return ({
         content: [{ type: "text", text: `Tool echo: ${message}` }]
     });
-}));
-server.prompt("echo", { message: zod_1.z.string() }, ({ message }) => ({
-    messages: [{
-            role: "user",
-            content: {
-                type: "text",
-                text: `Please process this message: ${message}`
-            }
-        }]
 }));
 const app = (0, express_1.default)();
 let transport;

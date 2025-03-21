@@ -16,6 +16,8 @@
   "description": "",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.7.0",
+    "axios": "^1.8.4",
+    "dotenv": "^16.4.7",
     "express": "^5.0.1"
   },
   "devDependencies": {
